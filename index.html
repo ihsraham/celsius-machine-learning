@@ -148,6 +148,10 @@
             console.log(inputTensor);
             const answer = model.predict(inputTensor);
             console.log(trained_object.history["loss"]);
+            for (let i = 0; i < model.getWeights().length; i++) {
+              console.log(model.getWeights()[i].dataSync());
+            }
+            // console.log(model.getWeights().length);
             // console.log(trained_object.history["loss"][99]);
             //console.log(answer.dataSync());
             let answers = answer.dataSync()[0];
